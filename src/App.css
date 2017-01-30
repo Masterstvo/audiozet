@@ -1,0 +1,107 @@
+.Diary {
+    margin: 20px 20px;
+    border: 1px solid #339900;
+    text-align: center;
+    border-radius: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-user-select: none; /* Запрещает выделение текста на  Google Chrome, Opera Next, Safari */
+}
+.Month {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin: 10px;
+}
+.Month span {
+    margin: 0 40px;
+    padding: 5px;
+    width: 170px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #339900;
+}
+.Month span:hover {
+    background: #339900;
+    color: white;
+}
+.content {
+    display: flex;
+    margin: 0 15px 15px 15px;
+}
+.contentTh {
+    height: 40px;
+    color: #339900;
+    font-size: 17px;
+}
+.default {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 10px;
+}
+.leftToggle, .rightToggle  {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #339900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leftToggle:hover, .rightToggle:hover  {
+    background: #339900;
+    color: white;
+}
+.cell {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    
+    border-radius: 10px;
+    cursor: pointer;
+    color: #339900;
+    font-weight: bold;
+}
+.cell:hover {
+    background-color: #339900;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    transition: 0.2s;
+}
+#month {
+    position: relative;
+}
+.popup {
+    width: 160%;
+    position: absolute;
+    color: black;
+    background-color: white;
+    top: 150%;
+    left: -30%;
+    font-size: 16px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px;
+
+}
+.popupEl {
+    border: 1px solid #339900;
+    border-radius: 5px;
+    width: 28%;
+    margin: 5px;
+}
+.today {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #339900;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 30px;
+}
