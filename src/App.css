@@ -14,6 +14,7 @@
     height: 400px;
     width: 370px;
     overflow: hidden;
+    position: relative;
     -webkit-user-select: none; /* Запрещает выделение текста на  Google Chrome, Opera Next, Safari */
 }
 .calendar {
@@ -88,30 +89,19 @@
 #month {
     position: relative;
 }
-.popup {
-    width: 160%;
-    position: absolute;
-    color: black;
-    background-color: white;
-    top: 150%;
-    left: -30%;
-    font-size: 16px;
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border: 2px solid black;
-    border-radius: 10px;
-
+.selectYear {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0,-100%,0);
+  transition: .4s;
 }
-.popupEl {
-    border: 1px solid #339900;
-    border-radius: 5px;
-    width: 28%;
-    margin: 5px;
-}
-.today {
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    line-height: 30px;
+.return {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -6px;
+  font-size: 30px;
+  cursor: pointer;
+  color: gray;
 }

@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import SelectYear from './SelectYear';
 
-class Popup extends Component {
+class SelectMonth extends Component {
+    
+    moveIndex() {
+      let calendar = document.querySelector('.calendar');
+      let selectYear = document.querySelector('.selectYear');
+      calendar.style.transform = '';
+      selectYear.style.transform = '';
+    }
+  
     render(){
         return (
-            <div className='popup'>
+            <div className='selectYear'>
+                <SelectYear />
                 <div className='popupEl'>Январь</div>
                 <div className='popupEl'>Феыраль</div>
                 <div className='popupEl'>Март</div>
@@ -17,8 +27,9 @@ class Popup extends Component {
                 <div className='popupEl'>Октябрь</div>
                 <div className='popupEl'>Ноябрь</div>
                 <div className='popupEl'>Декабрь</div>
+                <div className='return' onClick={this.moveIndex.bind(this)}>⬇</div>
             </div>
-        );
+        ); 
     }
 }
 
@@ -27,4 +38,4 @@ export default connect(
         store: state
     }),
     dispatch => ({})
-)(Popup);
+)(SelectMonth);

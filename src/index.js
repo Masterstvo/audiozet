@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import Month from './Month';
+import SelectDay from './SelectDay';
 import Content from './Content';
+import SelectMonth from './SelectMonth';
+import state from './STORE';
 
 import './index.css';
 import './App.css';
@@ -26,6 +28,16 @@ function reducer(state = initialState, action){
                         month: new Date(state.year, state.month +1).getMonth(),
                         day: new Date(state.year, state.month +1).getDate() 
         };
+        case 'LEFTTOGGLE-YEAR': return { 
+                        year: new Date(state.year - 1, state.month).getFullYear(),
+                        month: new Date(state.year - 1, state.month).getMonth(),
+                        day: new Date(state.year - 1, state.month).getDate()                
+        };
+        case 'RIGHTTOGGLE-YEAR': return { 
+                        year: new Date(state.year + 1, state.month).getFullYear(),
+                        month: new Date(state.year + 1, state.month).getMonth(),
+                        day: new Date(state.year + 1, state.month).getDate()                
+        };
         default: return state;
     }
 }
@@ -35,8 +47,9 @@ const store = createStore(reducer);
 ReactDOM.render(
     <Provider store={store}>
         <div className='Diary'>
+          <SelectMonth />
           <div className='calendar'>
-            <Month />
+            <SelectDay />
             <Content />
           </div>
         </div>
