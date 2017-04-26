@@ -1,12 +1,24 @@
+#root {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
 .Diary {
-    margin: 20px 20px;
-    border: 1px solid #339900;
+    border: 1px solid lightgray;
     text-align: center;
     border-radius: 10px;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
+    height: 400px;
+    width: 370px;
+    overflow: hidden;
     -webkit-user-select: none; /* Запрещает выделение текста на  Google Chrome, Opera Next, Safari */
+}
+.calendar {
+  transform: translate3d(0,0,0);
+  transition: .4s;
 }
 .Month {
     display: flex;
@@ -21,19 +33,21 @@
     width: 170px;
     border-radius: 5px;
     cursor: pointer;
-    color: #339900;
+    color: gray;
 }
 .Month span:hover {
-    background: #339900;
-    color: white;
+    color: #9f9f9f;
 }
 .content {
     display: flex;
-    margin: 0 15px 15px 15px;
+    margin: 15px;
+}
+#table {
+  margin: 0 auto;
 }
 .contentTh {
     height: 40px;
-    color: #339900;
+    color: gray;
     font-size: 17px;
 }
 .default {
@@ -47,14 +61,13 @@
     width: 40px;
     border-radius: 50%;
     cursor: pointer;
-    color: #339900;
+    color: gray;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .leftToggle:hover, .rightToggle:hover  {
-    background: #339900;
-    color: white;
+    color: #9f9f9f;
 }
 .cell {
     height: 40px;
@@ -63,15 +76,14 @@
     
     border-radius: 10px;
     cursor: pointer;
-    color: #339900;
+    color: gray;
     font-weight: bold;
 }
 .cell:hover {
-    background-color: #339900;
+    background-color: gray;
     font-weight: bold;
     color: white;
-    font-size: 20px;
-    transition: 0.2s;
+    font-size: 19px;
 }
 #month {
     position: relative;
@@ -100,8 +112,6 @@
 .today {
     width: 30px;
     height: 30px;
-    border: 1px solid #339900;
-    border-radius: 50%;
     display: inline-block;
     line-height: 30px;
 }

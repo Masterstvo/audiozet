@@ -35,8 +35,10 @@ const store = createStore(reducer);
 ReactDOM.render(
     <Provider store={store}>
         <div className='Diary'>
+          <div className='calendar'>
             <Month />
             <Content />
+          </div>
         </div>
     </Provider>,
   document.getElementById('root')

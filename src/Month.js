@@ -16,8 +16,10 @@ class Month extends Component {
     rightToggle(){
         this.props.clickRightToggle();
     }
-    popUpMonth(){
-        this.setState({ isOpen: !this.state.isOpen })
+    moveBlock(){
+      let calendar = document.querySelector('.calendar');
+      let translate = calendar.style.transform = 'translate3d(0,+100%,0)';
+      console.log(translate);
     }
     render() {
         const isOpen = this.state.isOpen;
@@ -25,9 +27,8 @@ class Month extends Component {
         return (
             <div className="Month">
                 <div className='leftToggle' onClick={this.leftToggle.bind(this)}>◄</div>
-                <span onClick={this.popUpMonth.bind(this)} id='month'>
+                <span onClick={this.moveBlock.bind(this)} id='month'>
                     {date}
-                    {isOpen && <Popup />}
                 </span>
                 <div className='rightToggle' onClick={this.rightToggle.bind(this)}>►</div>
             </div>
